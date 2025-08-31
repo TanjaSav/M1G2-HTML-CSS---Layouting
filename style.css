@@ -1,0 +1,99 @@
+/* Reset default margin and padding for all elements */
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+/* Main container that holds the entire poster layout */
+.container{
+  width: 100%;
+  height: 100vh; /* Minimum height equals full screen height */
+  background-image: url(images/music.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Poster card that contains the main content */
+.poster-card{
+  position: relative;
+  padding: 25px 35px; /* Inner spacing */
+  color: #fff;
+}
+
+/* Overlay effect using a pseudo-element */
+.poster-card::before{
+  content: ""; /* Empty content to create the layer */
+  position: absolute; /* Position it over the poster card */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-image: url(images/background.png);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8; /* Make it semi-transparent */
+  z-index: -1;/* Place it behind the main content */
+}
+
+/* Navigation bar inside the poster */
+.nav{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo image styling */
+.logo{
+  width: 100px; /* Fixed width for logo */
+}
+
+
+/* Event details list styling */
+ul{
+  font-size: 20px; 
+  line-height: 24px;
+  margin: 14px 0;
+}
+
+/* Text block containing the title and link */
+.text{
+  width: 40%;
+  margin: 180px auto 0; 
+  text-align: center;
+} 
+
+/* Main title styling with animated background */
+.text h1{
+  font-size: 60px; 
+  font-weight: 500;
+  margin-bottom: 140px;
+  color: transparent;
+  -webkit-text-stroke: 1px #d7cae5; /* Outline the text with a soft purple stroke */
+  background: url(images/background.png); /* Use background image as fill */
+  -webkit-background-clip: text;/* Clip background to text shape */
+  background-position: 0 0;
+  animation:  back 1s linear infinite;/* Animate background movement */
+}
+
+/* Keyframes for background animation */
+@keyframes back{
+
+
+  100%{
+    background-position: 2000px 0; /* Move background horizontally */
+  }
+}
+
+/* Link styling */
+ a{
+  font-size: 16px; 
+  line-height: 24px;
+  color: #fff;
+  text-decoration: none;
+}
